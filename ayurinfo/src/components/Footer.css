@@ -1,0 +1,103 @@
+/* src/components/Footer.css */
+
+/* Footer Styling */
+.footer {
+  background-color: #2c3e50; /* A dark, professional background color */
+  color: #010c0f; /* Light text color for contrast */
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px; /* Space between the columns */
+}
+
+/* Logo Section */
+.footer-logo-section {
+  flex: 1; /* Allows the section to grow */
+  min-width: 250px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ecf0f1;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.copyright-text {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Links Section */
+.footer-links-section {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer-links-section h4, .footer-socials-section h4 {
+  font-size: 18px;
+  border-bottom: 2px solid #3498db; /* A subtle underline for titles */
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  color: #3498db;
+}
+
+.footer-links-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links-section ul li a {
+  color: #091011;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.8;
+  transition: color 0.3s ease;
+}
+
+.footer-links-section ul li a:hover {
+  color: #3498db;
+}
+
+/* Socials Section */
+.footer-socials-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  color: #173daf;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  color: #3498db;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
