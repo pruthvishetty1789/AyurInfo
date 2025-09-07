@@ -1,7 +1,10 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-require("dotenv").config();
+import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import plantsRoutes from "./routes/plantRoutes.js";
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -21,9 +24,7 @@ app.get("/", (req, res) => {
 });
 
 // Example API route
-app.get("/api/data", (req, res) => {
-  res.json({ message: "Hello from backend with MongoDB!" });
-});
+app.use("/api/plants",plantsRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
