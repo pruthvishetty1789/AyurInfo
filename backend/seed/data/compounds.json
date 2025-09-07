@@ -1,0 +1,26 @@
+[
+  {
+    "compoundName": "Withanolides",
+    "healingProperties": ["Anti-stress", "Immunity Boost", "Cognitive Support"]
+  },
+  {
+    "compoundName": "Azadirachtin",
+    "healingProperties": ["Antifungal", "Antibacterial", "Blood Purifier"]
+  },
+  {
+    "compoundName": "Gingerol",
+    "healingProperties": ["Anti-inflammatory", "Digestive Aid", "Anti-nausea"]
+  },
+  {
+    "compoundName": "Eugenol",
+    "healingProperties": ["Antioxidant", "Anti-inflammatory", "Antiseptic"]
+  },
+  {
+    "compoundName": "Plumbagin",
+    "healingProperties": ["Digestive Stimulant", "Anti-inflammatory", "Antimicrobial"]
+  },
+  {
+    "compoundName": "Vasicine",
+    "healingProperties": ["Expectorant", "Bronchodilator", "Antispasmodic"]
+  }
+]

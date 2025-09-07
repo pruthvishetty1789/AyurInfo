@@ -1,0 +1,42 @@
+[
+  {
+    "ailmentName": "Stress",
+    "symptoms": ["Anxiety", "Insomnia", "Fatigue"]
+  },
+  {
+    "ailmentName": "Skin Diseases",
+    "symptoms": ["Rashes", "Itching", "Infections"]
+  },
+  {
+    "ailmentName": "Indigestion",
+    "symptoms": ["Bloating", "Nausea", "Acidity"]
+  },
+  {
+    "ailmentName": "Cough",
+    "symptoms": ["Throat Irritation", "Mucus", "Chest Congestion"]
+  },
+  {
+    "ailmentName": "Cold",
+    "symptoms": ["Runny Nose", "Sneezing", "Congestion"]
+  },
+  {
+    "ailmentName": "Asthma",
+    "symptoms": ["Wheezing", "Shortness of Breath", "Chest Tightness"]
+  },
+  {
+    "ailmentName": "Bronchitis",
+    "symptoms": ["Persistent Cough", "Mucus Production", "Fatigue"]
+  },
+  {
+    "ailmentName": "Chronic Cough",
+    "symptoms": ["Long-lasting Cough", "Throat Clearing", "Hoarseness"]
+  },
+  {
+    "ailmentName": "Obesity",
+    "symptoms": ["Excess Body Fat", "High BMI", "Shortness of Breath"]
+  },
+  {
+    "ailmentName": "Rheumatism",
+    "symptoms": ["Joint Pain", "Stiffness", "Swelling"]
+  }
+]
