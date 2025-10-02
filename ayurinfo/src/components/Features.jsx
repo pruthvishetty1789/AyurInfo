@@ -1,4 +1,5 @@
 import React from "react";
+import './Features.css'; // Import the new CSS file
 
 const features = [
   {
