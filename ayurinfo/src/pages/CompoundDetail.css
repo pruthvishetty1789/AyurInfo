@@ -1,0 +1,74 @@
+.compound-detail-container {
+  padding: 3rem 1.5rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #228B22; 
+  font-weight: 600;
+  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+  color: #1a6f1a; 
+  transform: translateX(-5px); 
+}
+
+/* --- Card/Detail Box Styling --- */
+.compound-detail-card {
+  padding: 3rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); 
+  background: #ffffff;
+}
+
+/* --- Typography: Main Title --- */
+.compound-detail-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50; 
+  border-bottom: 3px solid #e0e0e0; 
+  padding-bottom: 10px;
+}
+
+/* --- Healing Properties List Styling --- */
+.healing-properties-list {
+  padding-left: 1.5rem;
+  margin-top: 1.5rem;
+  list-style-type: none; 
+}
+
+.healing-properties-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1em; 
+  position: relative;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #4a4a4a;
+}
+
+.healing-properties-list li::before {
+  content: "•"; 
+  color: #3498db;
+  font-weight: bold;
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* --- Loading and Error Styles --- */
+.loading-message,
+.not-found-message {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 1.2rem;
+  color: #555;
+}

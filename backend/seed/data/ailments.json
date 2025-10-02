@@ -1,42 +1,72 @@
 [
   {
     "ailmentName": "Stress",
-    "symptoms": ["Anxiety", "Insomnia", "Fatigue"]
+    "description": "A condition caused by emotional or physical tension.",
+    "commonSymptoms": ["Anxiety", "Insomnia", "Fatigue"],
+    "recommendedPlants": [],
+    "recommendedCompounds": []
   },
   {
     "ailmentName": "Skin Diseases",
-    "symptoms": ["Rashes", "Itching", "Infections"]
+    "description": "Disorders that affect the skin.",
+    "commonSymptoms": ["Rashes", "Itching", "Infections"],
+    "recommendedPlants": [],
+    "recommendedCompounds": []
   },
   {
     "ailmentName": "Indigestion",
-    "symptoms": ["Bloating", "Nausea", "Acidity"]
+    "description": "Difficulty in digesting food.",
+    "commonSymptoms": ["Bloating", "Nausea", "Acidity"],
+    "recommendedPlants": [],
+    "recommendedCompounds": []
   },
   {
     "ailmentName": "Cough",
-    "symptoms": ["Throat Irritation", "Mucus", "Chest Congestion"]
+    "description": "A reflex action to clear the airway.",
+    "commonSymptoms": ["Throat Irritation", "Mucus", "Chest Congestion"],
+    "recommendedPlants": [],
+    "recommendedCompounds": []
   },
   {
     "ailmentName": "Cold",
-    "symptoms": ["Runny Nose", "Sneezing", "Congestion"]
+    "description": "A viral infection affecting the respiratory tract.",
+    "commonSymptoms": ["Runny Nose", "Sneezing", "Congestion"],
+    "recommendedPlants": [],
+    "recommendedCompounds": []
   },
   {
     "ailmentName": "Asthma",
-    "symptoms": ["Wheezing", "Shortness of Breath", "Chest Tightness"]
+    "description": "A condition causing narrowing of airways.",
+    "commonSymptoms": ["Wheezing", "Shortness of Breath", "Chest Tightness"],
+    "recommendedPlants": [],
+    "recommendedCompounds": []
   },
   {
     "ailmentName": "Bronchitis",
-    "symptoms": ["Persistent Cough", "Mucus Production", "Fatigue"]
+    "description": "Inflammation of the bronchial tubes.",
+    "commonSymptoms": ["Persistent Cough", "Mucus Production", "Fatigue"],
+    "recommendedPlants": [],
+    "recommendedCompounds": []
   },
   {
     "ailmentName": "Chronic Cough",
-    "symptoms": ["Long-lasting Cough", "Throat Clearing", "Hoarseness"]
+    "description": "A cough lasting more than 8 weeks.",
+    "commonSymptoms": ["Long-lasting Cough", "Throat Clearing", "Hoarseness"],
+    "recommendedPlants": [],
+    "recommendedCompounds": []
   },
   {
     "ailmentName": "Obesity",
-    "symptoms": ["Excess Body Fat", "High BMI", "Shortness of Breath"]
+    "description": "Excess body fat that may impair health.",
+    "commonSymptoms": ["Excess Body Fat", "High BMI", "Shortness of Breath"],
+    "recommendedPlants": [],
+    "recommendedCompounds": []
   },
   {
     "ailmentName": "Rheumatism",
-    "symptoms": ["Joint Pain", "Stiffness", "Swelling"]
+    "description": "Inflammation and pain in joints, muscles, or fibrous tissue.",
+    "commonSymptoms": ["Joint Pain", "Stiffness", "Swelling"],
+    "recommendedPlants": [],
+    "recommendedCompounds": []
   }
 ]

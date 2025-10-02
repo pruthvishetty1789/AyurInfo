@@ -5,57 +5,68 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+// Load environment variables
+dotenv.config();
+
 // Load models
 import Plant from '../models/Plant.js';
 import Ailment from '../models/Ailment.js';
 import Compound from '../models/Compound.js';
 import Prescription from '../models/Prescription.js';
 
-// Load environment variables
-dotenv.config();
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load data
+// Load JSON data
 const plantsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'plants.json'), 'utf-8'));
 const ailmentsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'ailments.json'), 'utf-8'));
 const compoundsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'compounds.json'), 'utf-8'));
 const prescriptionsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'prescriptions.json'), 'utf-8'));
 
+// Connect to MongoDB
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+    console.log('MongoDB Connected:', conn.connection.name);
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
+    process.exit(1);
+  }
+};
+
+// Destroy all data
+const destroyCollections = async () => {
+  const deletedPlants = await Plant.deleteMany({});
+  const deletedAilments = await Ailment.deleteMany({});
+  const deletedCompounds = await Compound.deleteMany({});
+  const deletedPrescriptions = await Prescription.deleteMany({});
+
+  console.log('Deleted Plants:', deletedPlants.deletedCount);
+  console.log('Deleted Ailments:', deletedAilments.deletedCount);
+  console.log('Deleted Compounds:', deletedCompounds.deletedCount);
+  console.log('Deleted Prescriptions:', deletedPrescriptions.deletedCount);
+};
+
+// Import new data
 const importData = async () => {
   try {
-    // Connect to MongoDB
-    await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await connectDB();
 
-    console.log('Connected to MongoDB');
+    // Clear existing data first (without exiting)
+    await destroyCollections();
 
-    // Clear existing data
-    await Plant.deleteMany({});
-    await Ailment.deleteMany({});
-    await Compound.deleteMany({});
-    await Prescription.deleteMany({});
+    // Insert new data
+    const insertedAilments = await Ailment.insertMany(ailmentsData);
+    const insertedCompounds = await Compound.insertMany(compoundsData);
+    const insertedPrescriptions = await Prescription.insertMany(prescriptionsData);
+    const insertedPlants = await Plant.insertMany(plantsData);
 
-    console.log('Existing data cleared');
-
-    // Import new data
-    await Ailment.insertMany(ailmentsData);
-    await Compound.insertMany(compoundsData);
-    await Prescription.insertMany(prescriptionsData);
-    await Plant.insertMany(plantsData);
+    console.log('Inserted Ailments:', insertedAilments.length);
+    console.log('Inserted Compounds:', insertedCompounds.length);
+    console.log('Inserted Prescriptions:', insertedPrescriptions.length);
+    console.log('Inserted Plants:', insertedPlants.length);
 
     console.log('Data imported successfully!');
-
-    // Now run the mapping script
-    console.log('Starting to map references...');
-    
-    // Import and run the mapping function
-    const { default: mapReferences } = await import('./mapReferences.js');
-    await mapReferences();
-
     mongoose.connection.close();
     process.exit(0);
   } catch (error) {
@@ -64,31 +75,16 @@ const importData = async () => {
   }
 };
 
-const destroyData = async () => {
-  try {
-    await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-
-    // Clear all data
-    await Plant.deleteMany({});
-    await Ailment.deleteMany({});
-    await Compound.deleteMany({});
-    await Prescription.deleteMany({});
-
-    console.log('Data destroyed successfully!');
-    mongoose.connection.close();
-    process.exit(0);
-  } catch (error) {
-    console.error('Error destroying data:', error);
-    process.exit(1);
-  }
-};
-
-// Run based on command line argument
+// Run based on CLI argument
 if (process.argv[2] === '-d') {
-  destroyData();
+  // Only destroy
+  connectDB().then(() => {
+    destroyCollections().then(() => {
+      console.log('All data destroyed successfully!');
+      mongoose.connection.close();
+      process.exit(0);
+    });
+  });
 } else {
   importData();
 }

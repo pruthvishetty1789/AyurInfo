@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
+
 const compoundSchema = new mongoose.Schema({
-    compoundName:String,
-    healingProperties:[String],
+  compoundName: { type: String, required: true },
+  healingProperties: [{ type: String }]
 });
-export default mongoose.model("Compound", compoundSchema);
+
+const Compound = mongoose.model("Compound", compoundSchema);
+
+export default Compound;

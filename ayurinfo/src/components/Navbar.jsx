@@ -1,20 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import { FaSearch } from "react-icons/fa"; // Import the search icon
+import { FaSearch } from "react-icons/fa";
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">🌿 AyurInfo</div>
       <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/plants">Plants</Link></li>
-        <li>Ailments</li>
-        <li>Prescriptions</li>
+        <li>
+          <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/plants" className={({ isActive }) => (isActive ? "active" : "")}>
+            Plants
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/compounds" className={({ isActive }) => (isActive ? "active" : "")}>
+            Compounds
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/ailments" className={({isActive})=>(isActive ? "active" : "")}>Ailments</NavLink>
+        </li>
+        <li>
+          <NavLink to="/prescriptions" className={({isActive})=>(isActive ? "active" : "")}>Prescriptions</NavLink>
+        </li>
       </ul>
       <div className="search">
-        <FaSearch /> {/* Use the imported component here */}
+        <FaSearch />
       </div>
     </nav>
   );

@@ -1,0 +1,97 @@
+
+.ailment-detail-container {
+  padding: 2.5rem 1.5rem; 
+  max-width: 850px; 
+  margin: 0 auto;
+}
+
+/* --- Back Button Styling --- */
+.back-link {
+  text-decoration: none;
+  color: #228B22; 
+  font-weight: 600;
+  margin-bottom: 2rem; 
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+  color: #1a6f1a; 
+  transform: translateX(-5px); 
+}
+
+/* --- Card/Detail Box Styling --- */
+.ailment-detail-card {
+  padding: 3rem; 
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background: #ffffff; 
+}
+
+/* --- Typography and Content --- */
+.ailment-detail-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50; 
+  border-bottom: 3px solid #e0e0e0; 
+  padding-bottom: 10px;
+}
+
+.ailment-detail-description {
+  margin-bottom: 2rem;
+  color: #4a4a4a;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* --- Symptoms Section Styling --- */
+.symptoms-title {
+  margin-bottom: 1rem;
+  color: #228B22; 
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.symptoms-list {
+  padding-left: 1.5rem;
+  color: #4a4a4a;
+  list-style-type: none; 
+}
+
+.symptoms-list li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.symptoms-list li::before {
+  content: "•";
+  color: #228B22; 
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.no-symptoms-text {
+  color: #777;
+  font-style: italic;
+}
+
+/* --- Loading and Error Styles --- */
+.loading-message,
+.error-message,
+.not-found-message {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.error-message {
+  color: #d9534f;
+  font-weight: bold;
+}
